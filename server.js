@@ -6,7 +6,8 @@ import connectDB from './config/db.js';
 
 import formRoutes from './routes/formRoutes.js';
 import newsletterRoutes from './routes/newsletterRoutes.js';
-import adminRoutes from './routes/adminRoutes.js'; 
+import adminRoutes from './routes/adminRoutes.js';
+import analyticsRoute from './routes/analyticsRoute.js';
 
 // Load env vars
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use('/api/form', formRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/admin', adminRoutes);
+app.use("/api/analytics", analyticsRoute);
 
 const PORT = process.env.PORT || 5000;
 
