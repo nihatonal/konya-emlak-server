@@ -1,13 +1,14 @@
 // routes/adminRoutes.js
 import express from 'express';
-import { anaylyicsData, analyticsYearly, analyticsCountries, analyticsTrafficSources, trafficSourcesWeekly } from '../controllers/analyticsController.js';
+import { analyticsTopPagesOverview, getAnalyticsSummary, getAnalyticsChartData, analyticsCities, analyticsOverview, trafficSources } from '../controllers/analyticsController.js';
 
 const router = express.Router();
-router.get('/analytics-data', anaylyicsData);
-router.get('/analytics-data/yearly', analyticsYearly);
-router.get('/analytics-countries', analyticsCountries);
-router.get('/analytics-traffic-sources', analyticsTrafficSources);
-router.get('/traffic-sources/weekly', trafficSourcesWeekly);
+router.get('/analytics-locations', analyticsCities);
+router.get('/traffic-sources', trafficSources);
+router.get('/overview', analyticsOverview);
+router.get('/analytics-summary', getAnalyticsSummary);
+router.get('/analytics-chartdata', getAnalyticsChartData);
+router.get('/analytics-top-pages', analyticsTopPagesOverview)
 
 
 
